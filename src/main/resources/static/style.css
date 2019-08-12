@@ -19,7 +19,7 @@
 }
 
 .option{
-    padding: 20px;
+    padding: 25px;
 }
 
 
@@ -72,5 +72,19 @@ a:active {
 
     background-image: url(/img/pattern2.png);
     background-attachment: fixed;
+
+}
+
+.receipeBody{
+    font-size: 18px;
+    color: #000;
+    font-style: normal;
+    font-weight: 400;
+    text-align: justify-all;
+    font-family: 'Roboto', sans-serif;
+
+    width: auto;
+    padding: 10px;
+
 
 }

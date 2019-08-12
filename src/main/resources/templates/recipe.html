@@ -3,11 +3,14 @@
 <meta charset="UTF-8">
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext"
+          rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <title>CookBook</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+
+    <title>Recipe</title>
 </head>
 
 <body>
@@ -36,8 +39,17 @@
 
     <div class="leftContent" style="display:inline-block">
         <div class="bar">
-            <h4>new!</h4>
+            <h4 th:text="${recipe.getName()}">Recipe name</h4>
         </div>
+        <div class="receipeBody">
+            <h6 style="font-style: italic" th:text="${recipe.getNotes()}">Ingredient</h6>
+            <h6>Ingredient</h6>
+            <span th:text="${recipe.getIngredients()}">Ingredient</span>
+            <h6>Instructions</h6>
+            <span th:text="${recipe.getInstructions()}">Instruction</span>
+        </div>
+
+
     </div>
 
     <div class="rightContent" style="display:inline-block">

@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+<meta charset="UTF-8">
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext"
+          rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <title>Title</title>
-</head>
-<body>
-<div class="conteiner">
-    <div th:replace="elements :: header"></div>
+    <link href="style.css" rel="stylesheet" type="text/css">
 
+    <title>Category</title>
+</head>
+
+<body>
+
+<div class="conteiner">
+
+    <div th:replace="elements :: header"></div>
 
     <div class="leftContent" style="display:inline-block">
         <div class="bar">
             <h4 th:text="${selected.getTitle()}">Category name</h4>
         </div>
         <ul>
-        <li th:each="recipe: ${selected.getRecipeList()}">
-            <a style="color: black" th:href="|/category/${recipe.getCategory().getTitle()}/${recipe.getId()}|" th:text="${recipe.getName()}"></a>
-        </li>
+            <li th:each="recipe: ${selected.getRecipeList()}">
+                <a style="color: black" th:href="|/category/recipe/${recipe.getId()}|"
+                   th:text="${recipe.getName()}"></a>
+            </li>
         </ul>
-
-
     </div>
 
     <div class="rightContent" style="display:inline-block">

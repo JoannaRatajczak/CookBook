@@ -1,5 +1,6 @@
 package pl.rtaj.demo.category;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,6 @@ public class CategoryController {
     @GetMapping("/{id}")
     public String home(@PathVariable Long id, Model model) {
 
-
         Optional<Category> optional = categoryRepository.findById(id);
 
         if (optional.isPresent()) {
@@ -37,12 +37,29 @@ public class CategoryController {
         }
 
         else return "category";
-//        else {
-//         List<Recipe> all = recipeRepository.findAll();
-//            model.addAttribute("selected", all);
-//            return "category";
-//        }
     }
+
+    @GetMapping("/recipe/{id}")
+    public String recipeView(@PathVariable Long id, Model model){
+
+//for navbar ******************************************************
+        List<Category> list = categoryRepository.findAll();
+        model.addAttribute("categories", list);
+//        *********************************************************
+
+       Optional<Recipe> optional = recipeRepository.findById(id);
+
+       if (optional.isPresent()){
+           Recipe recipe = optional.get();
+           model.addAttribute("recipe",recipe);
+           return "recipe";
+       }
+       else return "categories";
+
+    }
+
+
+
 }
 
 
