@@ -1,0 +1,76 @@
+/*font-family: 'Roboto', sans-serif;*/
+
+.logo {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.navbar {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #000;
+    font-style: italic;
+}
+
+.option{
+    padding: 20px;
+}
+
+
+a:hover {
+    color: #ffa243;
+}
+
+a:active {
+    color: #ffa243;
+}
+
+.conteiner {
+    font-family: 'Roboto', sans-serif;
+
+    width: 1200px;
+    padding-left: 60px;
+    padding-right: 60px;
+
+}
+
+.topRecipies {
+    font-size: 28px;
+    color: #000;
+    font-style: normal;
+    font-weight: 400;
+    text-align: right;
+    /*text-transform: uppercase;*/
+    font-family: 'Roboto', sans-serif;
+
+    width: 200px;
+    margin-left: 50px;
+    padding: 10px;
+
+    background-image: url(/img/pattern2.png);
+    background-attachment: fixed;
+
+}
+
+.bar {
+    font-size: 28px;
+    color: #000;
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+
+    width: 780px;
+    padding: 10px;
+
+    background-image: url(/img/pattern2.png);
+    background-attachment: fixed;
+
+}

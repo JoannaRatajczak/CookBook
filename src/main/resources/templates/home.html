@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="conteiner">
+    <div th:replace="elements :: header"></div>
+    <div class="leftContent" style="display:inline-block">
+    <div class="bar">
+        <h4>new!</h4>
+    </div>
+    </div>
+    <div class="rightContent" style="display:inline-block">
+        <div th:replace="elements :: topRecipies"></div>
+    </div>
+    <div style="clear:both"></div>
+
+</div>
+
+</body>
+</html>
