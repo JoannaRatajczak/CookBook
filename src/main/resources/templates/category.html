@@ -13,37 +13,26 @@
 <div class="conteiner">
     <div th:replace="elements :: header"></div>
 
-    <div class="categories">
-        <nav class="navbar navbar-dark bg-white navbar-expand-md">
-            <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#mainmenu"
-                    aria-controls="mainmenu"
-                    aria-expanded="false" aria-label="Przełącznik"><span class="navbar-toggler-icon"></span></button>
-
-            <div class="collapce navbar-collapse navbar-dark" id="navbarNav">
-                <div class="option">
-                    <a style="color: #00c874" href="/category/all">Recipe book</a>
-                </div>
-                <div class="option" th:each="category: ${categories}">
-                    <a style="color: #00c874" th:href="|/category/${category.getId()}|"
-                       th:text="${category.getTitle()}"> Category name </a>
-                </div>
-            </div>
-        </nav>
-    </div>
 
     <div class="leftContent" style="display:inline-block">
         <div class="bar">
-            <h4>new!</h4>
+            <h4 th:text="${selected.getTitle()}">Category name</h4>
         </div>
+        <ul>
+        <li th:each="recipe: ${selected.getRecipeList()}">
+            <a style="color: black" th:href="|/category/${recipe.getCategory().getTitle()}/${recipe.getId()}|" th:text="${recipe.getName()}"></a>
+        </li>
+        </ul>
+
+
     </div>
 
     <div class="rightContent" style="display:inline-block">
         <div th:replace="elements :: topRecipies"></div>
     </div>
     <div style="clear:both"></div>
-
-
 </div>
+
 
 </body>
 </html>

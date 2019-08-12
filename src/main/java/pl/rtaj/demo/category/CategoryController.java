@@ -1,12 +1,13 @@
-package pl.rtaj.demo.Category;
+package pl.rtaj.demo.category;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import pl.rtaj.demo.Recipes.Recipe;
-import pl.rtaj.demo.Recipes.RecipeRepository;
+import pl.rtaj.demo.recipes.Recipe;
+import pl.rtaj.demo.recipes.RecipeRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,25 +24,25 @@ public class CategoryController {
         this.recipeRepository = recipeRepository;
     }
 
-    @GetMapping("/")
-    public String categoryRecipes(Model model, @RequestParam RecipeCategory categoryEnum) {
+    @GetMapping("/{id}")
+    public String home(@PathVariable Long id, Model model) {
 
 
-        Optional<Category> optional = categoryRepository.findAllByCategory(categoryEnum);
+        Optional<Category> optional = categoryRepository.findById(id);
 
         if (optional.isPresent()) {
             Category category = optional.get();
             model.addAttribute("selected", category);
             return "category";
         }
-        return null;
 
-//        List<Recipe> listByCategory;
-//        if (category==null) listByCategory = recipeRepository.findAll();
-//        else listByCategory = recipeRepository.findAllByCategory(category);
-//
-//        model.addAttribute("recipies", listByCategory);
-
+        else return "category";
+//        else {
+//         List<Recipe> all = recipeRepository.findAll();
+//            model.addAttribute("selected", all);
+//            return "category";
+//        }
     }
-
 }
+
+

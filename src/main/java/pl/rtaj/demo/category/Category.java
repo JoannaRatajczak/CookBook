@@ -1,6 +1,6 @@
-package pl.rtaj.demo.Category;
+package pl.rtaj.demo.category;
 
-import pl.rtaj.demo.Recipes.Recipe;
+import pl.rtaj.demo.recipes.Recipe;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,9 +10,8 @@ public class Category {
 
     @Id
     private Long id;
-    @Enumerated(EnumType.STRING)
-    private RecipeCategory category;
-//    private MealType type;
+    private String title;
+
 
     @OneToMany(mappedBy="category")
     private List<Recipe> recipeList;
@@ -20,10 +19,26 @@ public class Category {
     public Category() {
     }
 
-    public Category(Long id, RecipeCategory category, List<Recipe> recipeList) {
+    public Category(Long id, String title, List<Recipe> recipeList) {
         this.id = id;
-        this.category = category;
+        this.title = title;
         this.recipeList = recipeList;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public List<Recipe> getRecipeList() {

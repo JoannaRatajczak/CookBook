@@ -1,9 +1,8 @@
-package pl.rtaj.demo.Recipes;
+package pl.rtaj.demo.recipes;
 
-import pl.rtaj.demo.Category.Category;
+import pl.rtaj.demo.category.Category;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 public class Recipe {
