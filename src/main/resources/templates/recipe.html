@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <meta charset="UTF-8">
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Sofia&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext"
           rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="/style.css" rel="stylesheet" type="text/css">
 
 
     <title>Recipe</title>
@@ -18,35 +19,25 @@
 <div class="conteiner">
 
     <div th:replace="elements :: header"></div>
-
-    <div class="categories">
-        <nav class="navbar navbar-dark bg-white navbar-expand-md">
-            <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#mainmenu"
-                    aria-controls="mainmenu"
-                    aria-expanded="false" aria-label="Przełącznik"><span class="navbar-toggler-icon"></span></button>
-
-            <div class="collapce navbar-collapse navbar-dark" id="navbarNav">
-                <div class="option">
-                    <a style="color: #00c874" href="/category/all">Recipe book</a>
-                </div>
-                <div class="option" th:each="category: ${categories}">
-                    <a style="color: #00c874" th:href="|/category/${category.getId()}|"
-                       th:text="${category.getTitle()}"> Category name </a>
-                </div>
-            </div>
-        </nav>
-    </div>
+    <div th:replace="elements :: navbarCategories"></div>
 
     <div class="leftContent" style="display:inline-block">
         <div class="bar">
             <h4 th:text="${recipe.getName()}">Recipe name</h4>
         </div>
-        <div class="receipeBody">
-            <h6 style="font-style: italic" th:text="${recipe.getNotes()}">Ingredient</h6>
-            <h6>Ingredient</h6>
-            <span th:text="${recipe.getIngredients()}">Ingredient</span>
-            <h6>Instructions</h6>
+        <div class="receipeBody" style="width: 780px">
+            <img th:src="${recipe.getPicture()}" width="400px"></br>
+            <b><a style="font-size: 22px; color: #00cc44">Ingredient</a></b></br>
+            <span th:text="${recipe.getIngredients()}">Ingredient</span></br>
+            <b><a style="font-size: 22px; color: #00cc44">Instructions</a></b></br>
             <span th:text="${recipe.getInstructions()}">Instruction</span>
+        </br>
+        </br>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a class="btn btn-light" th:href="|/edit?id=${recipe.id}|">Edit.</a>
+                <a class="btn btn-light" th:href="|/delete?id=${recipe.id}|">Delete.</a>
+            </div>
+
         </div>
 
 

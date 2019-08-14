@@ -3,10 +3,11 @@
 <meta charset="UTF-8">
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Sofia&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
     <title>CookBook</title>
 </head>
 
@@ -15,35 +16,25 @@
 <div class="conteiner">
 
     <div th:replace="elements :: header"></div>
-
-    <div class="categories">
-        <nav class="navbar navbar-dark bg-white navbar-expand-md">
-            <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#mainmenu"
-                    aria-controls="mainmenu"
-                    aria-expanded="false" aria-label="Przełącznik"><span class="navbar-toggler-icon"></span></button>
-
-            <div class="collapce navbar-collapse navbar-dark" id="navbarNav">
-                <div class="option">
-                    <a style="color: #00c874" href="/category/all">Recipe book</a>
-                </div>
-                <div class="option" th:each="category: ${categories}">
-                    <a style="color: #00c874" th:href="|/category/${category.getId()}|"
-                       th:text="${category.getTitle()}"> Category name </a>
-                </div>
-            </div>
-        </nav>
-    </div>
+    <div th:replace="elements :: navbarCategories"></div>
 
     <div class="leftContent" style="display:inline-block">
         <div class="bar">
             <h4>new!</h4>
         </div>
+        <div class="newestRecipies" >
+            <div class="new" style="display:inline-block" th:each="newRecipe : ${newRecipes}">
+                <img th:src="${newRecipe.getPicture()}" width="220px">
+                <a style="color: #ffa243" th:href="|/category/recipe/${newRecipe.getId()}|" th:text="${newRecipe.getName()}">txt</a>
+            </div>
+        </div>
+<!--        <div style="clear:both"></div>-->
     </div>
 
     <div class="rightContent" style="display:inline-block">
         <div th:replace="elements :: topRecipies"></div>
     </div>
-    <div style="clear:both"></div>
+
 
 
 </div>

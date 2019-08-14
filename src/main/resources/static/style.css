@@ -3,32 +3,62 @@
 .logo {
     padding-top: 30px;
     padding-bottom: 30px;
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
-    font-weight: 400;
+    font-family: 'Sofia', cursive;
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: 3px;
     text-align: center;
     margin: 0 auto;
-    width: 50%;
+    width: 60%;
 }
 
 .navbar {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Sofia', cursive;
     font-size: 18px;
     color: #000;
-    font-style: italic;
+
 }
 
-.option{
-    padding: 25px;
+.option {
+    padding: 20px;
+    margin-left: 20px;
 }
 
 
 a:hover {
-    color: #ffa243;
+    color: #ffa243 !important;
+    /*background-image: url(/img/pattern2.png);*/
+    /*background-attachment: fixed;*/
+    /*padding: 10px;*/
 }
 
 a:active {
-    color: #ffa243;
+    color: #ffa243 !important;
+}
+
+a:link {
+    color: #ffa243 !important;
+}
+
+ul {
+    list-style-type: "♥";}
+
+
+.new {
+    /*object-fit: scale-down;*/
+    /*object-fit: cover;*/
+    /*position:absolute;*/
+
+    vertical-align: top;
+    top: 0;
+    width: 220px;
+    margin-left: 20px;
+
+}
+
+.new.a:hover {
+    background-image: none;
+
 }
 
 .conteiner {
@@ -37,7 +67,16 @@ a:active {
     width: 1200px;
     padding-left: 60px;
     padding-right: 60px;
+    margin: 0 auto;
 
+}
+
+.leftContent {
+    vertical-align: top;
+}
+
+.rightContent {
+    vertical-align: top;
 }
 
 .topRecipies {
@@ -59,7 +98,7 @@ a:active {
 }
 
 .bar {
-    font-size: 28px;
+    font-size: 15px;
     color: #000;
     font-style: normal;
     font-weight: 400;
@@ -75,16 +114,28 @@ a:active {
 
 }
 
-.receipeBody{
-    font-size: 18px;
+.newestRecipies {
+    width: 780px;
+    padding: 10px;
+    text-align: justify;
+
+}
+
+
+.receipeBody {
+    font-size: 15px;
     color: #000;
     font-style: normal;
     font-weight: 400;
     text-align: justify-all;
     font-family: 'Roboto', sans-serif;
 
-    width: auto;
-    padding: 10px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.3)), url(/img/pattern2.png);
+    background-attachment: fixed;
+
+
+    width: 780px;
+    padding: 20px;
 
 
 }

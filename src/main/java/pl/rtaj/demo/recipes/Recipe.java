@@ -12,9 +12,15 @@ public class Recipe {
     private Long id;
     private String name;
     private String picture;
+    @Column(columnDefinition="varchar(MAX)")
     private String ingredients;
+
+    @Column(columnDefinition="varchar(MAX)")
     private String instructions;
+
+    @Column(columnDefinition="varchar(1000)")
     private String notes;
+
     private Double mark;
 
     @ManyToOne
