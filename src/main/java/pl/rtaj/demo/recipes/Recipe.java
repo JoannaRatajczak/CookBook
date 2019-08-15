@@ -26,6 +26,20 @@ public class Recipe {
     @ManyToOne
     private Category category;
 
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", picture='" + picture + '\'' +
+                ", ingredients='" + ingredients + '\'' +
+                ", instructions='" + instructions + '\'' +
+                ", notes='" + notes + '\'' +
+                ", mark=" + mark +
+                ", category=" + category +
+                '}';
+    }
+
     public Recipe() {
     }
 

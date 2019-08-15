@@ -23,6 +23,10 @@
         <div class="bar">
             <h4 th:text="${selected.getTitle()}">Category name</h4>
         </div>
+
+        <span style="font-family: 'Sofia', cursive; padding-left: 10px; text-align: center; font-size: 20px; color: #ffa243"
+              th:text="${selected.getDescription()}"> desc of category</span>
+
         <ul>
             </br>
             <li th:each="recipe: ${selected.recipeList}">
