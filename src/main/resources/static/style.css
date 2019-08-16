@@ -24,12 +24,12 @@
     margin-left: 20px;
 }
 
+.a {
+    color: black;
+}
 
 a:hover {
     color: #ffa243 !important;
-    /*background-image: url(/img/pattern2.png);*/
-    /*background-attachment: fixed;*/
-    /*padding: 10px;*/
 }
 
 a:active {
@@ -82,10 +82,7 @@ ul {
 .topRecipies {
     font-family: 'Roboto', sans-serif;
     width: 200px;
-    background-image: url(/img/pattern2.png);
-    background-attachment: fixed;
     margin-left: 50px;
-    /*padding-left: 25px;*/
 
 }
 

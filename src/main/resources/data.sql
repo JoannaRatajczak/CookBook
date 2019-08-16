@@ -1,5 +1,5 @@
 INSERT INTO category(id, title, description) VALUES
-(1, 'VEGAN', 'No meat doesnt mean no taste'), (2, 'MEAT', 'PROTEIN! To build your profile.'), (3, 'FISH', 'Source of OMEGA3. Good for brain!'), (4, 'SWEET', 'Coz its time for you...');
+(1, 'VEGAN', 'No meat doesn''t mean no taste'), (2, 'MEAT', 'PROTEIN! To build your profile.'), (3, 'FISH', 'Source of OMEGA3. Good for brain!'), (4, 'SWEET', 'Coz its time for you...');
 
 INSERT INTO recipe(id, name, picture,ingredients,instructions,notes, mark, category_id) VALUES
 (1, 'Easy 5-Ingredient Protein Bars (Peanut Butter Chocolate!)', '/img/id1.jpg', '

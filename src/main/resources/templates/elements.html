@@ -31,9 +31,9 @@
     <div class="topRecipiesHeader">
         <h4>Top recipies</h4>
     </div>
-    <div th:each="top : ${top}">
+    <div style="padding-top: 10px" th:each="top : ${top}">
         <img th:src="${top.getPicture()}" width="200px">
-        <a style="color: #ffa243" th:href="|/category/recipe/${top.getId()}|" th:text="${top.getName()}">txt</a>
+        <b><a style="color: #00c874; text-align: justify;" th:href="|/category/recipe/${top.getId()}|" th:text="${top.getName()}">txt</a></b>
 
     </div>
 </div>
