@@ -30,6 +30,9 @@ public class HomeController {
         List<Recipe> newest = recipeRepository.theNewest();
         model.addAttribute("newRecipes", newest);
 
+        List<Recipe> top = recipeRepository.top();
+        model.addAttribute("top", top);
+
         return ("home");
     }
 

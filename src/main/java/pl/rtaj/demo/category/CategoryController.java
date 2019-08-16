@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import pl.rtaj.demo.recipes.Recipe;
 import pl.rtaj.demo.recipes.RecipeRepository;
 
 import java.util.List;
@@ -26,45 +27,32 @@ public class CategoryController {
         List<Category> listNavbar = categoryRepository.findAll();
         model.addAttribute("categories", listNavbar);
 
+        List<Recipe> top = recipeRepository.top();
+        model.addAttribute("top", top);
+
         Optional<Category> optional = categoryRepository.findById(id);
 
-        if (optional.isPresent() && id != null) {
+        if (optional.isPresent()) {
             Category category = optional.get();
             model.addAttribute("selected", category);
             return "category";
-        } else return "category/all";
+        } else return"404";
     }
 
 
-    @GetMapping("/category/all")
-    public String homeAllRecipes(Model model) {
+    @GetMapping("/recipesFind")
+    public String allRecipes(Model model) {
 
-        List<Category> allReceipe = categoryRepository.findAll();
+        List<Category> listNavbar = categoryRepository.findAll();
+        model.addAttribute("categories", listNavbar);
 
-        model.addAttribute("selected", allReceipe);
-        return "category";
+        List<Recipe> top = recipeRepository.top();
+        model.addAttribute("top", top);
+
+        model.addAttribute("recipes", recipeRepository.findAll());
+        return "recipes";
     }
 }
-
-//    @GetMapping("/recipe/{id}")
-//    public String recipeView(@PathVariable Long id, Model model){
-//
-////for navbar ******************************************************
-//        List<Category> list = categoryRepository.findAll();
-//        model.addAttribute("categories", list);
-////        *********************************************************
-//
-//       Optional<Recipe> optional = recipeRepository.findById(id);
-//
-//       if (optional.isPresent()){
-//           Recipe recipe = optional.get();
-//           model.addAttribute("recipe",recipe);
-//           return "recipe";
-//       }
-//       else return "categories";
-//
-//    }
-
 
 
 
