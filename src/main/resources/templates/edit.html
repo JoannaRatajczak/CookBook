@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Sofia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Editing</title>
+</head>
+
+<body>
+
+<div class="conteiner">
+
+    <div th:replace="elements :: header"></div>
+    <div th:replace="elements :: navbarCategories"></div>
+
+    <div class="leftContent" style="display:inline-block">
+        <div class="bar">
+            <h4>Edit your recipe</h4>
+
+            <form th:action="@{/edited}" method="post" th:object="${recipe}">
+                <input type="hidden" th:field="*{id}">
+                <input type="hidden" th:field="*{category}">
+                <input type="hidden" th:field="*{mark}">
+                <span style="padding-bottom: 10px">New name</span>
+                <input th:field="*{name}" class="form-control" type="text" placeholder="Default input" style="padding-bottom: 15px">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Ingredient</label>
+                    <textarea th:field="*{ingredients}" class="form-control" id="exampleFormControlTextarea1"
+                              rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Instruction</label>
+                    <textarea th:field="*{instructions}" class="form-control" id="exampleFormControlTextarea2"
+                              rows="1"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Additional notes</label>
+                    <textarea th:field="*{notes}" class="form-control" id="exampleFormControlTextarea3"
+                              rows="1"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit your new formula</button>
+            </form>
+
+
+        </div>
+    </div>
+
+    <div class="rightContent" style="display:inline-block">
+        <div th:replace="elements :: topRecipies"></div>
+    </div>
+    <div style="clear:both"></div>
+
+
+</div>
+
+</body>
+</html>

@@ -21,6 +21,7 @@ public class HomeController {
         this.recipeRepository = recipeRepository;
     }
 
+
     @GetMapping("/")
     public String home(Model model) {
 

@@ -1,3 +1,7 @@
+-- INSERT INTO user(username, password, enabled) VALUES ('Admin', '{noop}admin', true),
+-- ('User', '{noop}admin', true);
+-- INSERT INTO user_role(username, role) VALUES ('Admin', 'ROLE_ADMIN'),('User', 'ROLE_USER');
+
 INSERT INTO category(id, title, description) VALUES
 (1, 'VEGAN', 'No meat doesn''t mean no taste'), (2, 'MEAT', 'PROTEIN! To build your profile.'), (3, 'FISH', 'Source of OMEGA3. Good for brain!'), (4, 'SWEET', 'Coz its time for you...');
 

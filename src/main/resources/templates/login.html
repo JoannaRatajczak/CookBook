@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<meta charset="UTF-8">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Sofia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap&subset=latin-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <title>Login</title>
+</head>
+<body>
+
+<div class="conteiner">
+
+    <div th:replace="elements :: header"></div>
+    <div th:replace="elements :: navbarCategories"></div>
+
+    <div class="leftContent" style="display:inline-block">
+        <div class="bar">
+            <h4>Login needed.</h4>
+        </div>
+        <div class="receipeBody">
+            <form th:action="@{/add}" method="post">
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
